@@ -15,15 +15,16 @@ best_xgboost_model.load_model("best_model.json")
 if st.checkbox('Show Training Dataframe'):
     data
 
-st.subheader("Please enter review you want 
+st.subheader("Please enter review you want")
 user_input = st.text_area("Review", default_value_goes_here)
              
 if st.button('Make Prediction'):
     prediction = best_xgboost_model.predict(user_input)
     print("final pred: ",prediction)
-if(prediction == 0):             
+
+if(prediction == 0):
     st.write(f"Your review was a complaint ")
-else
+else:
      st.write(f"Your review was a suggestion ")
 st.write(f"Thank you {st.session_state.name}! I hope you liked it.")
 st.write(f"If you want to see more advanced applications you can follow me on [medium](https://medium.com/@gkeretchashvili)")
