@@ -14,7 +14,7 @@ import xgboost as xgb
 from xgboost import XGBClassifier
 
 
-data = pd.read_csv("final4k.csv")
+data = pd.read_csv("https://www.kaggle.com/datasets/chub02/chappal-guitar-cream-merge")
 X=data['Review'].values
 Y=data['flair_sentiment'].values
 x_train,x_test,y_train,y_test=train_test_split(X,Y,test_size=0.35)
