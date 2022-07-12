@@ -6,9 +6,13 @@ from xgboost import XGBClassifier
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import StandardScaler
+from pickle import load
 st.header("REVIEW PREDICTION APP")
 st.text_input("Enter your Name: ", key="name")
 data = pd.read_csv("merged_dataset1.csv")
+
+# load the scaler
+scaler = load(open('scaler.pkl', 'rb'))
 
 # load model
 #best_xgboost_model = XGBClassifier()
@@ -23,7 +27,9 @@ st.subheader("Please enter review you want")
 user_input = st.text_area("Review", default_value_goes_here)
              
 if st.button('Make Prediction'):
-    prediction = model.predict(user_input)
+    # transform the test dataset
+    user_scaled = scaler.transform(user_input)
+    prediction = model.predict(user_scaled)
     print("final pred: ",prediction)
 
 if(prediction == 0):
