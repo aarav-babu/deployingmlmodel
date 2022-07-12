@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import  LabelEncoder
-import xgboost as xgb
+from xgboost import XGBClassifier
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import StandardScaler
@@ -11,7 +11,7 @@ st.text_input("Enter your Name: ", key="name")
 data = pd.read_csv("merged_dataset1.csv")
 
 # load model
-best_xgboost_model = xgb.XGBClassifier()
+best_xgboost_model = XGBClassifier()
 best_xgboost_model.load_model("best_model.json")
 
 if st.checkbox('Show Training Dataframe'):
