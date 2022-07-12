@@ -26,7 +26,7 @@ if st.checkbox('Show Training Dataframe'):
     data
 
 st.subheader("Please enter review you want")
-user_input = st.text_area("Review", default_value_goes_here)
+user_input = st.text_area("Review")
              
 if st.button('Make Prediction'):
     # transform the test dataset
