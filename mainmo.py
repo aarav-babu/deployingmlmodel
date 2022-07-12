@@ -9,6 +9,7 @@ from sklearn.preprocessing import StandardScaler
 from pickle import load
 st.header("REVIEW PREDICTION APP")
 st.text_input("Enter your Name: ", key="name")
+st.text(xgb.__version__)
 data = pd.read_csv("merged_dataset1.csv")
 
 # load the scaler
