@@ -19,8 +19,8 @@ x_train= st_x.fit_transform(Bow_train)
 x_test= st_x.transform(Bow_test)
 
 #load model
-best_model = XGBClassifier()
-best_model.load_model("bestmodel.json")
+model = XGBClassifier()
+model.load_model("best_model.json")
 ac = accuracy_score(Y_test,y_pred)
 cm= confusion_matrix(Y_test, y_pred)
 
@@ -29,5 +29,5 @@ df = pd.DataFrame(cm, index = class_label, columns = class_label)
 #%%
 
 inputs =input()
-prediction = best_model.predict(inputs)
+prediction = model.predict(inputs)
 print("final pred",prediction)
