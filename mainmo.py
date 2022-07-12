@@ -19,7 +19,7 @@ scaler = load(open('scaler.pkl', 'rb'))
 # load model
 #best_xgboost_model = XGBClassifier()
 #best_xgboost_model.load_model("best_model.json")
-model = XGBClassifier()
+model = xgb.XGBClassifier()
 model.load_model("best_model.json")
 
 if st.checkbox('Show Training Dataframe'):
