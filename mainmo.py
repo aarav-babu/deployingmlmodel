@@ -4,6 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import  LabelEncoder
 import xgboost as xgb
 import numpy as np
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.preprocessing import StandardScaler
 st.header("REVIEW PREDICTION APP")
 st.text_input("Enter your Name: ", key="name")
 data = pd.read_csv("merged_dataset1.csv")
