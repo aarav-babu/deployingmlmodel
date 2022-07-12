@@ -3,6 +3,8 @@ from sklearn.model_selection import train_test_split
 import xgboost as xgb
 import numpy as np
 from xgboost import XGBClassifier
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.preprocessing import StandardScaler
 
 data = pd.read_csv("merged_dataset1.csv")
 X=data['Review'].values
