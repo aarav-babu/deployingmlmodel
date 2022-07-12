@@ -11,8 +11,10 @@ st.text_input("Enter your Name: ", key="name")
 data = pd.read_csv("merged_dataset1.csv")
 
 # load model
-best_xgboost_model = XGBClassifier()
-best_xgboost_model.load_model("best_model.json")
+#best_xgboost_model = XGBClassifier()
+#best_xgboost_model.load_model("best_model.json")
+model = XGBClassifier()
+model.load_model("best_model.json")
 
 if st.checkbox('Show Training Dataframe'):
     data
@@ -21,7 +23,7 @@ st.subheader("Please enter review you want")
 user_input = st.text_area("Review", default_value_goes_here)
              
 if st.button('Make Prediction'):
-    prediction = best_xgboost_model.predict(user_input)
+    prediction = model.predict(user_input)
     print("final pred: ",prediction)
 
 if(prediction == 0):
