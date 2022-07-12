@@ -34,7 +34,7 @@ if st.button('Make Prediction'):
     prediction = model.predict(user_scaled)
     print("final pred: ",prediction)
 
-if(prediction == 0):
+if(prediction == '0'):
     st.write(f"Your review was a complaint ")
 else:
      st.write(f"Your review was a suggestion ")
