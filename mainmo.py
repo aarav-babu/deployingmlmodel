@@ -29,8 +29,6 @@ st.subheader("Please enter review you want")
 user_input = st.text_area("Review")
              
 if st.button('Make Prediction'):
-    # fit scaler on the training dataset
-    scaler.fit(user_input)
     # transform the test dataset
     user_scaled = scaler.transform(user_input)
     prediction = model.predict(user_scaled)
