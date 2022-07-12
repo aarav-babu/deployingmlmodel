@@ -31,6 +31,6 @@ x_test= st_x.transform(Bow_test)
 
 # fit model no training data
 model = XGBClassifier()
-model.fit(x_train, Y_train)
+model.fit(x_train, y_train)
 
 model.save_model("best_model.json")
