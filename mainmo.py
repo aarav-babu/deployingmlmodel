@@ -33,11 +33,10 @@ if st.button('Make Prediction'):
     user_scaled = scaler.transform(user_input)
     prediction = model.predict(user_scaled)
     print("final pred: ",prediction)
-
-if(prediction == '0'):
-    st.write(f"Your review was a complaint ")
-else:
-     st.write(f"Your review was a suggestion ")
+    if(prediction == '0'):
+        st.write(f"Your review was a complaint ")
+    else:
+        st.write(f"Your review was a suggestion ")
 st.write(f"Thank you {st.session_state.name}! I hope you liked it.")
 st.write(f"If you want to see more advanced applications you can follow me on [medium](https://medium.com/@gkeretchashvili)")
 
