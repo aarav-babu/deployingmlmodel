@@ -17,6 +17,8 @@ Bow_test=Vect.transform(x_test)
 st_x= StandardScaler(with_mean=False)   
 x_train= st_x.fit_transform(Bow_train)    
 x_test= st_x.transform(Bow_test)
+#save label encoder classes
+np.save('classes.npy', st_x.classes_)
 
 #load model
 model = XGBClassifier()
