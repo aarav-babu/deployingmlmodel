@@ -6,7 +6,7 @@ import xgboost as xgb
 import numpy as np
 st.header("REVIEW PREDICTION APP")
 st.text_input("Enter your Name: ", key="name")
-data = pd.read_csv("https://www.kaggle.com/datasets/chub02/chappal-guitar-cream-merge")
+data = pd.read_csv("merged_dataset1.csv")
 
 # load model
 best_xgboost_model = xgb.XGBClassifier()
