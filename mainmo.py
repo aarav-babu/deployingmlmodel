@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import  LabelEncoder
 from xgboost import XGBClassifier
+import xgboost as xgb
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import StandardScaler
