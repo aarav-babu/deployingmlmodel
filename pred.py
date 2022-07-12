@@ -16,7 +16,7 @@ st_x= StandardScaler(with_mean=False)
 x_train= st_x.fit_transform(Bow_train)    
 x_test= st_x.transform(Bow_test)
 
-load model
+#load model
 best_model = XGBClassifier()
 best_model.load_model("bestmodel.json")
 ac = accuracy_score(Y_test,y_pred)
